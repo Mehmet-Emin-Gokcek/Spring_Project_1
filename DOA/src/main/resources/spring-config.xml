@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/jee
+            http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+
+
+    <bean name="student" class="com.assignment.Student" autowire="byType">
+    <property name="firstName" value="John"/>
+    <property name="lastName" value="Doe"/>
+    <property name="DOB" value="03/03/1995"/>
+    </bean>
+
+    <bean name="address" class="com.assignment.Address">
+        <property name="street" value="3409 Sugar Cup"/>
+        <property name="zip" value="77489"/>
+        <property name="city" value="Houston"/>
+    </bean>
+
+    <bean name="grade" class="com.assignment.Grade">
+        <property name="subject" value="Science"/>
+        <property name="letterGrade" value="B"/>
+    </bean>
+
+
+    <context:component-scan base-package="com.assignment"/>
+
+</beans>
